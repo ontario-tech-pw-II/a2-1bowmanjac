@@ -1,3 +1,8 @@
+#include<iostream>
+#include<fstream>
+
+using namespace std;
+
 int main(int argc, char const *argv[])
 {
  	ifstream fin;
@@ -5,8 +10,12 @@ int main(int argc, char const *argv[])
 	
 	// check if there are enough arguments
 	
+    if(argc != 3){
+        cout << "incorrect number of arguments" << endl;
+    }
 	
 	// open the first file
+    fin.open(argv[1]);
  	
 	char c;
 
@@ -18,6 +27,7 @@ int main(int argc, char const *argv[])
  	
 
 	// open the second file
+    fout.open(argv[2]);
 	
  	if (fout.fail())
  	{
@@ -36,4 +46,4 @@ int main(int argc, char const *argv[])
 
  	 return 0;
 
- } 
+ }
